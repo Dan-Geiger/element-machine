@@ -1,0 +1,17 @@
+{
+  "name": "element-machine",
+  "version": "1.0.0",
+  "description": "a small app to test myself.\r why not make this experience useful with something that can speed my workflow.\r noemorphism style - i want to make a kind of organic feel to the interaction with the app. \r intuitive interaction - i want to make the users next move as obvious as possible, using the conventions from the most used OS's and creative softwares.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "author": "Dan Geiger",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.0.1",
+    "parcel": "^2.0.1"
+  }
+}
