@@ -1,52 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,300;1,700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="src/sass/main.scss">
-  <script type="module" src="src/js/controller.js" defer></script>
-     <title>Element Mchine | by Dan Geiger</title>
-</head>
-<body>
-    <div class= "wrapper wrapper__all">    
-        <div class="top-bar__container">
-          <ul class="top-bar__menu-list">
-            <select id="menu-shape" class="top-bar__menu-item top-bar__menu-item--1">
-              <option value="Shapes">Shapes</option>
-              <option value="Squere">Square</option>
-              <option value="Circle">Circle</option>
-              <option value="Triangle">Triangle</option>
-              <option value="Pentagon">Pentagon</option>
-              <option value="Star">Star</option>
-              <option value="Draw shape">Draw shape</option>
-            </select>
-            <li class="top-bar__menu-item top-bar__menu-item--2">this</li>
-            <li class="top-bar__menu-item top-bar__menu-item--3">that</li>
-          </ul>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,300;1,700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="src/sass/main.scss" />
+        <script type="module" src="src/js/controller.js" defer></script>
+        <title>Element Mchine | by Dan Geiger</title>
+    </head>
+    <body>
+        <div class="testing">
+            <p>mouse X:<span class="mouse-pos--x"></span></p>
+            <p>mouse Y:<span class="mouse-pos--y"></span></p>
         </div>
-        
-        <div class="wrapper wrapper__code-desk">      
-          <div class="output-code__container">
-            <div class="output-code__blocks">
-              <div class="output-code__output output-code__html">output html here</div>
-              <div class="output-code__output output-code__css">output css here</div>
-              <div class="output-code__output output-code__js">output js here</div>
-            </div>  
-          </div>
-    
-          <div class="desk__container">
-            <canvas id="canvas1"></canvas>
-            <div class="desk__main"></div>
-          </div>
+        <div class="wrapper wrapper__all">
+            <div class="top-bar__container">
+                <ul class="top-bar__menu-list">
+                    <select
+                        id="menu-shape"
+                        class="top-bar__menu-item top-bar__menu-item--1"
+                    >
+                        <option value="Shapes">Shapes</option>
+                        <option value="Squere">Square</option>
+                        <option value="Circle">Circle</option>
+                        <option value="Triangle">Triangle</option>
+                        <option value="Pentagon">Pentagon</option>
+                        <option value="Star">Star</option>
+                        <option value="Draw shape">Draw shape</option>
+                    </select>
+                    <li class="top-bar__menu-item top-bar__menu-item--2">
+                        this
+                    </li>
+                    <li class="top-bar__menu-item top-bar__menu-item--3">
+                        that
+                    </li>
+                </ul>
+            </div>
+
+            <div class="wrapper wrapper__code-desk">
+                <div class="output-code__container">
+                    <div class="output-code__blocks">
+                        <div class="output-code__output output-code__html">
+                            output html here
+                        </div>
+                        <div class="output-code__output output-code__css">
+                            output css here
+                        </div>
+                        <div class="output-code__output output-code__js">
+                            output js here
+                        </div>
+                    </div>
+                </div>
+
+                <div class="desk__container">
+                    <canvas id="canvas1"></canvas>
+                    <div class="desk__main"></div>
+                </div>
+            </div>
+
+            <button class="btn btn__toggle-view">view</button>
         </div>
-        
-        <button class="btn btn__toggle-view">view</button>
-        
-      </div>
-</body>
+    </body>
 </html>
