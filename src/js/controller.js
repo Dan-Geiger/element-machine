@@ -1,14 +1,13 @@
-import { AddCanvas } from "./view/canvas";
-import { addClickListeners } from "./view/view";
+import { AddCanvas, animate } from './view/canvas';
+import { addClickListeners, data as viewData } from './view/view';
 
-function controlAddShape() {
-    console.log("ok");
-}
+function controlAddShape() {}
 
 //init fn
 function init() {
     AddCanvas();
     addClickListeners();
+    // animate()
 }
 
 init();
