@@ -1,3 +1,4 @@
+/** @type {CanvasRenderingContext2D} */
 //canvas init
 const elDesk = document.querySelector('.desk__container');
 export const canvas = document.getElementById('canvas1');
@@ -11,9 +12,8 @@ export function AddCanvas() {
         canvas.width = elDesk.offsetWidth;
         canvas.height = elDesk.offsetHeight;
     });
-    // animate.lineRect();
-    // animate.lineCircle();
-    animate([lineCircle, lineRect, house]);
+
+    animate([lineCircle, boundingBox, house]);
 }
 
 const animate = function (arrOfFn) {
@@ -21,11 +21,30 @@ const animate = function (arrOfFn) {
     arrOfFn.forEach((e) => {
         e();
     });
-    requestAnimationFrame(arg=>animate(arrOfFn));
+    requestAnimationFrame(() => animate(arrOfFn));
 };
 
-function lineRect() {
-    ctx.strokeRect(75, 140, 150, 110);
+function boundingBox() {
+    let startPoint = [375, 140];
+    let dimentions = [450, 450];
+    //ctx.arc(x, y, radius, startAngle, endAngle [, counterclockwise]);
+    ctx.fillStyle = 'grey';
+    ctx.strokeStyle = 'grey';
+    ctx.beginPath();
+    ctx.arc(startPoint[0], startPoint[1], 5, 0, 2 * Math.PI);
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(startPoint[0] + dimentions[0], startPoint[1], 5, 0, 2 * Math.PI);
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(startPoint[0] + dimentions[0], startPoint[1] + dimentions[1], 5, 0, 2 * Math.PI);
+    ctx.fill();
+    ctx.beginPath();
+    ctx.arc(startPoint[0], startPoint[1] + dimentions[1], 5, 0, 2 * Math.PI);
+    ctx.fill();
+    //ctx.strokeRect(x, y, width, height);
+    ctx.lineWidth = 1;
+    ctx.strokeRect(startPoint[0], startPoint[1], dimentions[0], dimentions[1]);
 }
 function lineCircle() {
     ctx.beginPath();
