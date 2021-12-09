@@ -1,35 +1,38 @@
 /** @type {CanvasRenderingContext2D} */
+
+import config from '../configuration.js';
+
 //canvas init
 const elDesk = document.querySelector('.desk__container');
-export const canvas = document.getElementById('canvas1');
+const canvas = document.getElementById('canvas1');
 const ctx = canvas.getContext('2d');
-canvas.width = elDesk.offsetWidth;
-canvas.height = elDesk.offsetHeight;
 
-export function AddCanvas() {
-    //canvas resizing
-    window.addEventListener('resize', () => {
+class CanvasCl {
+    drew() {
+        ctx.beginPath();
+        ctx.arc(100, 75, 50, 0, 2 * Math.PI);
+        ctx.stroke();
+    }
+
+    updateSize() {
         canvas.width = elDesk.offsetWidth;
         canvas.height = elDesk.offsetHeight;
-    });
+    }
 
-    animate([lineCircle, boundingBox, house]);
+    animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        boundingBox();
+        requestAnimationFrame(this.animate);
+    }
 }
-
-const animate = function (arrOfFn) {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    arrOfFn.forEach((e) => {
-        e();
-    });
-    requestAnimationFrame(() => animate(arrOfFn));
-};
+export default new CanvasCl();
 
 function boundingBox() {
     let startPoint = [375, 140];
     let dimentions = [450, 450];
     //ctx.arc(x, y, radius, startAngle, endAngle [, counterclockwise]);
-    ctx.fillStyle = 'grey';
-    ctx.strokeStyle = 'grey';
+    ctx.fillStyle = config.wireColor;
+    ctx.strokeStyle = config.cornerCircules;
     ctx.beginPath();
     ctx.arc(startPoint[0], startPoint[1], 5, 0, 2 * Math.PI);
     ctx.fill();
@@ -46,6 +49,7 @@ function boundingBox() {
     ctx.lineWidth = 1;
     ctx.strokeRect(startPoint[0], startPoint[1], dimentions[0], dimentions[1]);
 }
+
 function lineCircle() {
     ctx.beginPath();
     ctx.arc(100, 75, 50, 0, 2 * Math.PI);

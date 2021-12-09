@@ -1,15 +1,44 @@
-import { AddCanvas } from './view/canvas';
-import { addClickListeners, data as viewData } from './view/view';
+import canvas from './view/canvas.js';
 
-function controlAddShape() {
-    //get shapes from local storage
-    //control create shape
-}
+const canvasEl = document.getElementById('canvas1');
+const ctx = canvasEl.getContext('2d');
+
+let data = {
+    clickedPoint: [],
+    continuosPoint: [],
+};
+
+canvas.updateSize();
+canvas.animate();
+//adjasting canvas to window resize
+window.addEventListener('resize', () => {
+    canvas.updateSize();
+});
+
+// //continuous mouse position
+canvasEl.addEventListener('mousemove', (e) => {
+    data.continuosPoint = [e.pageX, e.pageY];
+
+    document.querySelector('.mouse-pos--x').textContent = data.continuosPoint[0]; //for testing
+    document.querySelector('.mouse-pos--y').textContent = data.continuosPoint[1]; //for testing
+});
+
+//clicked mouse position
+canvasEl.addEventListener('click', (e) => {
+    //record points clicked
+    data.clickedPoint = [e.pageX, e.pageY];
+    document.querySelector('.mouse-click').textContent = `x: ${data.clickedPoint[0]}, y: ${data.clickedPoint[1]}`; //for testing
+});
+
+// //button listeners
+// select.btnToggleView.addEventListener('click', () => {
+//     select.elCodeContainer.classList.toggle('output-code__container--animation');
+//     select.elCodeOutput.forEach((e) => e.classList.toggle('output-code__output--animation'));
+// });
 
 //init fn
 function init() {
     AddCanvas();
-    addClickListeners();
 }
 
-init();
+// init();
