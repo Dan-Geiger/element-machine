@@ -1,35 +1,32 @@
 /** @type {CanvasRenderingContext2D} */
 
-import config from '../configuration.js';
+import config from "../configuration.js";
 
 //canvas init
-const elDesk = document.querySelector('.desk__container');
-const canvas = document.getElementById('canvas1');
-const ctx = canvas.getContext('2d');
+const elDesk = document.querySelector(".desk__container");
+const canvas = document.getElementById("canvas1");
+const ctx = canvas.getContext("2d");
 
-class CanvasCl {
-    drew() {
-        ctx.beginPath();
-        ctx.arc(100, 75, 50, 0, 2 * Math.PI);
-        ctx.stroke();
-    }
-
-    updateSize() {
-        canvas.width = elDesk.offsetWidth;
-        canvas.height = elDesk.offsetHeight;
-    }
-
-    animate() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        boundingBox();
-        requestAnimationFrame(this.animate);
-    }
+export function drew(point1, point2) {
+    // ctx.arc(100, 75, 50, 0, 2 * Math.PI);
+    boundingBox(point1, point2);
 }
-export default new CanvasCl();
 
-function boundingBox() {
-    let startPoint = [375, 140];
-    let dimentions = [450, 450];
+export function updateSize() {
+    canvas.width = elDesk.offsetWidth;
+    canvas.height = elDesk.offsetHeight;
+}
+
+// function animate() {
+//     ctx.clearRect(0, 0, canvas.width, canvas.height);
+//     boundingBox();
+//     requestAnimationFrame(animate);
+// }
+
+function boundingBox(startPoint, dimentions) {
+    // [375, 140],[450, 450]
+    // let startPoint = [375, 140];
+    // let dimentions = [450, 450];
     //ctx.arc(x, y, radius, startAngle, endAngle [, counterclockwise]);
     ctx.fillStyle = config.wireColor;
     ctx.strokeStyle = config.cornerCircules;

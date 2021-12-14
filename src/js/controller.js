@@ -1,33 +1,41 @@
-import canvas from './view/canvas.js';
+import * as canvas from "./view/canvas.js";
 
-const canvasEl = document.getElementById('canvas1');
-const ctx = canvasEl.getContext('2d');
+const canvasEl = document.getElementById("canvas1");
+const ctx = canvasEl.getContext("2d");
 
 let data = {
-    clickedPoint: [],
-    continuosPoint: [],
+    clickCounter: 0,
+    clickedPoint: [0, 0],
+    continuosPoint: [0, 0],
 };
 
-canvas.updateSize();
-canvas.animate();
+function shapeController() {
+    if (data.clickCounter > 0) {
+        canvas.updateSize();
+        canvas.drew(data.clickedPoint, data.continuosPoint);
+    }
+}
+
 //adjasting canvas to window resize
-window.addEventListener('resize', () => {
-    canvas.updateSize();
+window.addEventListener("resize", () => {
+    shapeController();
 });
 
 // //continuous mouse position
-canvasEl.addEventListener('mousemove', (e) => {
+canvasEl.addEventListener("mousemove", (e) => {
     data.continuosPoint = [e.pageX, e.pageY];
-
-    document.querySelector('.mouse-pos--x').textContent = data.continuosPoint[0]; //for testing
-    document.querySelector('.mouse-pos--y').textContent = data.continuosPoint[1]; //for testing
+    shapeController();
+    // document.querySelector(".mouse-pos--x").textContent = data.continuosPoint[0]; //for testing
+    // document.querySelector(".mouse-pos--y").textContent = data.continuosPoint[1]; //for testing
 });
 
 //clicked mouse position
-canvasEl.addEventListener('click', (e) => {
+canvasEl.addEventListener("click", (e) => {
     //record points clicked
     data.clickedPoint = [e.pageX, e.pageY];
-    document.querySelector('.mouse-click').textContent = `x: ${data.clickedPoint[0]}, y: ${data.clickedPoint[1]}`; //for testing
+    data.clickCounter++;
+    shapeController();
+    // document.querySelector(".mouse-click").textContent = `x: ${data.clickedPoint[0]}, y: ${data.clickedPoint[1]}`; //for testing
 });
 
 // //button listeners
@@ -37,8 +45,6 @@ canvasEl.addEventListener('click', (e) => {
 // });
 
 //init fn
-function init() {
-    AddCanvas();
-}
+function init() {}
 
 // init();
