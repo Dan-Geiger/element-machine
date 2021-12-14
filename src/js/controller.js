@@ -1,41 +1,46 @@
-import * as canvas from "./view/canvas.js";
+import * as canvas from './view/canvas.js';
 
-const canvasEl = document.getElementById("canvas1");
-const ctx = canvasEl.getContext("2d");
+const canvasEl = document.getElementById('canvas1');
+const ctx = canvasEl.getContext('2d');
 
 let data = {
     clickCounter: 0,
-    clickedPoint: [0, 0],
-    continuosPoint: [0, 0],
+    clickedPoint: '',
+    continuosPoint: '',
+    getDimentions: function () {
+        return [this.continuosPoint[0] - this.clickedPoint[0], this.continuosPoint[1] - this.clickedPoint[1]];
+    },
 };
 
 function shapeController() {
-    if (data.clickCounter > 0) {
+    if (data.clickedPoint !== '') {
         canvas.updateSize();
-        canvas.drew(data.clickedPoint, data.continuosPoint);
+        canvas.drew(data.clickedPoint, data.getDimentions());
     }
 }
 
 //adjasting canvas to window resize
-window.addEventListener("resize", () => {
+window.addEventListener('resize', () => {
     shapeController();
 });
 
 // //continuous mouse position
-canvasEl.addEventListener("mousemove", (e) => {
-    data.continuosPoint = [e.pageX, e.pageY];
+canvasEl.addEventListener('mousemove', (e) => {
+    data.continuosPoint = [e.pageX, e.pageY - 60];
+    // data.continuosPoint = [e.screenX, e.screenY];
+
     shapeController();
-    // document.querySelector(".mouse-pos--x").textContent = data.continuosPoint[0]; //for testing
-    // document.querySelector(".mouse-pos--y").textContent = data.continuosPoint[1]; //for testing
 });
 
 //clicked mouse position
-canvasEl.addEventListener("click", (e) => {
+canvasEl.addEventListener('click', (e) => {
     //record points clicked
-    data.clickedPoint = [e.pageX, e.pageY];
-    data.clickCounter++;
+    data.clickedPoint = [e.pageX, e.pageY - 60];
+    // data.clickedPoint = [e.screenX, e.screenY];
+    // data.clickedPoint = [e.clientX, e.clientY];
+
+    // data.clickCounter++;
     shapeController();
-    // document.querySelector(".mouse-click").textContent = `x: ${data.clickedPoint[0]}, y: ${data.clickedPoint[1]}`; //for testing
 });
 
 // //button listeners
