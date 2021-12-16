@@ -1,12 +1,12 @@
 /** @type {CanvasRenderingContext2D} */
 
-import config from "../configuration.js";
+import config from '../configuration.js';
 
-const elDesk = document.querySelector(".desk__container");
-const wrapperEl = document.querySelector(".wrapper__all");
+const elDesk = document.querySelector('.desk__container');
+const wrapperEl = document.querySelector('.wrapper__all');
 //canvas init
-const canvas = document.getElementById("canvas1");
-const ctx = canvas.getContext("2d");
+const canvas = document.getElementById('canvas1');
+const ctx = canvas.getContext('2d');
 
 export function drew(point1, point2) {
     // ctx.arc(100, 75, 50, 0, 2 * Math.PI);
@@ -21,20 +21,11 @@ export function updateSize() {
 }
 
 export function getCanvasOffset() {
-    const paddingLeft = window
-        .getComputedStyle(wrapperEl, null)
-        .getPropertyValue("padding-left");
-    const paddingRight = window
-        .getComputedStyle(wrapperEl, null)
-        .getPropertyValue("padding-right");
-    const topBarHeiget = document.querySelector(
-        ".top-bar__container"
-    ).offsetHeight;
+    const paddingLeft = window.getComputedStyle(wrapperEl, null).getPropertyValue('padding-left');
+    const paddingRight = window.getComputedStyle(wrapperEl, null).getPropertyValue('padding-right');
+    const topBarHeiget = document.querySelector('.top-bar__container').offsetHeight;
 
-    return [
-        Number(paddingLeft.replace("px", "")),
-        topBarHeiget + Number(paddingRight.replace("px", "")),
-    ];
+    return [Number(paddingLeft.replace('px', '')), topBarHeiget + Number(paddingRight.replace('px', ''))];
 }
 // function animate() {
 //     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -56,13 +47,7 @@ function boundingBox(startPoint, dimentions) {
     ctx.arc(startPoint[0] + dimentions[0], startPoint[1], 5, 0, 2 * Math.PI);
     ctx.fill();
     ctx.beginPath();
-    ctx.arc(
-        startPoint[0] + dimentions[0],
-        startPoint[1] + dimentions[1],
-        5,
-        0,
-        2 * Math.PI
-    );
+    ctx.arc(startPoint[0] + dimentions[0], startPoint[1] + dimentions[1], 5, 0, 2 * Math.PI);
     ctx.fill();
     ctx.beginPath();
     ctx.arc(startPoint[0], startPoint[1] + dimentions[1], 5, 0, 2 * Math.PI);
