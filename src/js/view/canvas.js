@@ -8,7 +8,7 @@ const wrapperEl = document.querySelector('.wrapper__all');
 const canvas = document.getElementById('canvas1');
 const ctx = canvas.getContext('2d');
 
-export function drew(point1, point2) {
+export function drewBoundingBox(point1, point2) {
     // ctx.arc(100, 75, 50, 0, 2 * Math.PI);
     boundingBox(point1, point2);
 }
@@ -16,16 +16,21 @@ export function drew(point1, point2) {
 export function updateSize() {
     // canvas.width = elDesk.offsetWidth;
     // canvas.height = elDesk.offsetHeight;
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    canvas.width = elDesk.clientWidth;
+    canvas.height = elDesk.clientHeight;
 }
 
 export function getCanvasOffset() {
-    const paddingLeft = window.getComputedStyle(wrapperEl, null).getPropertyValue('padding-left');
-    const paddingRight = window.getComputedStyle(wrapperEl, null).getPropertyValue('padding-right');
+    const paddingLeft = window.getComputedStyle(wrapperEl, null).getPropertyValue('padding-left').replace('px', '');
+    const paddingRight = window.getComputedStyle(wrapperEl, null).getPropertyValue('padding-right').replace('px', '');
+    const paddingTop = window.getComputedStyle(wrapperEl, null).getPropertyValue('padding-top').replace('px', '');
     const topBarHeiget = document.querySelector('.top-bar__container').offsetHeight;
 
-    return [Number(paddingLeft.replace('px', '')), topBarHeiget + Number(paddingRight.replace('px', ''))];
+    return {
+        offSetLeft: Number(paddingLeft),
+        offSetRight: Number(paddingRight),
+        offSetTop: Number(topBarHeiget) + Number(paddingTop),
+    };
 }
 // function animate() {
 //     ctx.clearRect(0, 0, canvas.width, canvas.height);
