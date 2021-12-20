@@ -1,34 +1,9 @@
 import * as canvas from './view/canvas.js';
+import { data } from './model';
 
 const canvasEl = document.getElementById('canvas1');
 
-let data = {
-    clickCounter: 0,
-    clickedPoint: '',
-    continuosPoint: '',
-    getShapeDimentions: function () {
-        return [this.continuosPoint[0] - this.clickedPoint[0], this.continuosPoint[1] - this.clickedPoint[1]];
-    },
-    getMousePosition: function (event) {
-        return [
-            event.clientX - canvas.getCanvasOffset().offSetLeft,
-            event.clientY - canvas.getCanvasOffset().offSetTop,
-        ];
-    },
-    setClickPoint: function (event) {
-        this.clickedPoint = this.getMousePosition(event);
-    },
-    setContinuosPoint: function (event) {
-        this.continuosPoint = this.getMousePosition(event);
-    },
-};
-
-function shapeController() {
-    if (data.clickedPoint !== '') {
-        canvas.updateSize();
-        canvas.drewBoundingBox(data.clickedPoint, data.getShapeDimentions());
-    }
-}
+function shapeController() {}
 
 //adjasting canvas to window resize
 window.addEventListener('resize', () => {
