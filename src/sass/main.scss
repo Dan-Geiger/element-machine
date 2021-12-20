@@ -236,15 +236,13 @@ html {
 }
 
 .my-element {
+    display: inline-block;
     background-color: orangered;
-
-    display: flex;
-    justify-content: space-around;
-
     padding: 2rem;
     text-transform: uppercase;
     color: blue;
-    &__text {
-        display: inline-block;
-    }
+
+    /* width | style | color */
+    border: 0.5rem dashed black;
+    border-radius: 1rem;
 }
