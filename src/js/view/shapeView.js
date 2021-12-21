@@ -1,16 +1,16 @@
-class view {
-    constructor(width, height, text) {
-        this.width = width;
-        this.height = height;
-        this.text = text;
-    }
-
-    _parentElement = document.getElementById('my-element');
+class ShapeCL {
+    #parentElement = document.querySelector('.desk__main');
+    #myElement = document.getElementById('my-element');
 
     getElementDimentions() {
-        return [this._parentElement.offsetWidth, this._parentElement.offsetHeight];
+        //element width and height
+        return [this.#myElement.offsetWidth, this.#myElement.offsetHeight];
     }
-    centerShape(data) {
+    centerShape() {
         //center the element to the canvas
+        this.#myElement.style.marginLeft = this.#parentElement.offsetWidth / 2 + 'px';
+        this.#myElement.style.marginTop = this.#parentElement.offsetHeight / 2 + 'px';
     }
 }
+
+export default new ShapeCL();

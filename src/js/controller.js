@@ -1,10 +1,12 @@
-import * as canvas from './view/canvas.js';
 import { data } from './model';
+import ShapeCL from './view/shapeView.js';
 
 const canvasEl = document.getElementById('canvas1');
 
-function shapeController() {}
-
+function shapeController() {
+    ShapeCL.centerShape();
+}
+// ShapeCL.centerShape();
 //adjasting canvas to window resize
 window.addEventListener('resize', () => {
     shapeController();
@@ -32,6 +34,8 @@ canvasEl.addEventListener('mousemove', (e) => {
 // });
 
 //init fn
-function init() {}
+function init() {
+    ShapeCL.centerShape('my name is dan');
+}
 
 // init();

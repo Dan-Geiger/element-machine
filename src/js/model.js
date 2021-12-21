@@ -1,4 +1,5 @@
-//----------------------model-------------------
+import * as canvas from './view/canvas.js';
+
 export let data = {
     clickCounter: 0,
     clickedPoint: '',
