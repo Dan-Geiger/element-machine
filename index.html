@@ -19,11 +19,11 @@
         <title>Element Mchine | by Dan Geiger</title>
     </head>
     <body>
-        <div class="testing">
+        <!-- <div class="testing">
             <p>mouse X:<span class="mouse-pos--x"></span></p>
             <p>mouse Y:<span class="mouse-pos--y"></span></p>
             <p><span class="mouse-click">jhg</span></p>
-        </div>
+        </div> -->
         <div class="wrapper wrapper__all">
             <div class="top-bar__container">
                 <ul class="top-bar__menu-list">
@@ -41,85 +41,83 @@
                 </ul>
             </div>
 
-            <div class="wrapper wrapper__code-desk">
-                <div class="desk__container">
-                    <div class="desk__main">
-                        <div class="my-element" id="my-element">
-                            <div class="my-element__text">My element</div>
-                        </div>
-                        <canvas id="canvas1"></canvas>
+            <div class="desk__container">
+                <div class="desk__main">
+                    <div class="my-element" id="my-element">
+                        <div class="my-element__text">My element</div>
                     </div>
+                    <!-- <canvas id="canvas1"></canvas> -->
                 </div>
-
-                <aside class="style-bar__container">
-                    <ul class="style-bar__list">
-                        <li class="style-bar__style-item">
-                            <input type="checkbox" name="text center" />
-                            <span>text center</span>
-                            <input type="checkbox" name="uppercase" />
-                            <span>uppercase</span>
-                        </li>
-                        <li class="style-bar__style-item">
-                            <input type="checkbox" name="background color" />
-                            <span>background color</span>
-                            <input type="color" name="background color picker" value="#ff0000" />
-                        </li>
-                        <li class="style-bar__style-item">
-                            <input type="checkbox" name="rounded corners" />
-                            <span>rounded corners</span>
-                            <input type="number" name="rounded corners value" value="50" />
-                        </li>
-                        <li class="style-bar__style-item">
-                            <input type="checkbox" name="outline" />
-                            <span>outline</span>
-                            <input type="radio" name="outline sides" checked />
-                            <span>all sides</span>
-                            <input type="radio" name="outline sides" />
-                            <span>every side separately</span>
-                            <input type="number" name="outline value width" value="0.5" id="border-width" />
-                            <label for="border-width">width</label>
-                            <select name="border type select" id="border-type">
-                                <option value="solid">solid</option>
-                                <option value="double">double</option>
-                                <option value="dashed">dashed</option>
-                                <option value="dotted">dotted</option>
-                                <option value="groove">groove</option>
-                                <option value="inset">inset</option>
-                                <option value="outset">outset</option>
-                                <option value="ridge">ridge</option>
-                                <option value="none">none</option>
-                                <option value="hidden">hidden</option>
-                            </select>
-                            <span>type</span>
-                            <input type="color" name="outline color" />
-                            <span>color</span>
-                        </li>
-                        <li class="style-bar__style-item">
-                            <input type="checkbox" name="shadow" />
-                            <span>shadow</span>
-                            <input type="range" name="offset x" min="-10000" max="10000" />
-                            <input type="number" name="offset x" min="-10000" max="10000" />
-                            <span>left and right</span>
-                            <input type="range" name="offset y" min="-10000" max="10000" />
-                            <input type="number" name="offset y" min="-10000" max="10000" />
-                            <span>top and bottom</span>
-                            <input type="range" name="blur radius" min="-1000" max="1000" />
-                            <input type="number" name="blur radius" min="-1000" max="1000" />
-                            <span>blur radius</span>
-                            <input type="range" name="spread" min="-1000" max="1000" />
-                            <input type="number" name="spread" min="-1000" max="1000" />
-                            <span>spread</span>
-                            <input type="color" name="shadow color" />
-                            <span>shadow color</span>
-                            <input type="range" name="transparency" min="-1000" max="1000" />
-                            <input type="number" name="transparency" min="-1000" max="1000" />
-                            <span>transparency</span>
-                        </li>
-                    </ul>
-                </aside>
             </div>
 
-            <button class="btn btn__toggle-view">view</button>
+            <aside class="style-bar__container">
+                <ul class="style-bar__list">
+                    <li class="style-bar__style-item">
+                        <input type="checkbox" name="text center" />
+                        <span>text center</span>
+                        <input type="checkbox" name="uppercase" />
+                        <span>uppercase</span>
+                    </li>
+                    <li class="style-bar__style-item">
+                        <input type="checkbox" name="background color" />
+                        <span>background color</span>
+                        <input type="color" name="background color picker" value="#ff0000" />
+                    </li>
+                    <li class="style-bar__style-item">
+                        <input type="checkbox" name="rounded corners" />
+                        <span>rounded corners</span>
+                        <input type="number" name="rounded corners value" value="50" />
+                    </li>
+                    <li class="style-bar__style-item">
+                        <input type="checkbox" name="outline" />
+                        <span>outline</span>
+                        <input type="radio" name="outline sides" checked />
+                        <span>all sides</span>
+                        <input type="radio" name="outline sides" />
+                        <span>every side separately</span>
+                        <input type="number" name="outline value width" value="0.5" id="border-width" />
+                        <label for="border-width">width</label>
+                        <select name="border type select" id="border-type">
+                            <option value="solid">solid</option>
+                            <option value="double">double</option>
+                            <option value="dashed">dashed</option>
+                            <option value="dotted">dotted</option>
+                            <option value="groove">groove</option>
+                            <option value="inset">inset</option>
+                            <option value="outset">outset</option>
+                            <option value="ridge">ridge</option>
+                            <option value="none">none</option>
+                            <option value="hidden">hidden</option>
+                        </select>
+                        <span>type</span>
+                        <input type="color" name="outline color" />
+                        <span>color</span>
+                    </li>
+                    <li class="style-bar__style-item">
+                        <input type="checkbox" name="shadow" />
+                        <span>shadow</span>
+                        <input type="range" name="offset x" min="-10000" max="10000" />
+                        <input type="number" name="offset x" min="-10000" max="10000" />
+                        <span>left and right</span>
+                        <input type="range" name="offset y" min="-10000" max="10000" />
+                        <input type="number" name="offset y" min="-10000" max="10000" />
+                        <span>top and bottom</span>
+                        <input type="range" name="blur radius" min="-1000" max="1000" />
+                        <input type="number" name="blur radius" min="-1000" max="1000" />
+                        <span>blur radius</span>
+                        <input type="range" name="spread" min="-1000" max="1000" />
+                        <input type="number" name="spread" min="-1000" max="1000" />
+                        <span>spread</span>
+                        <input type="color" name="shadow color" />
+                        <span>shadow color</span>
+                        <input type="range" name="transparency" min="-1000" max="1000" />
+                        <input type="number" name="transparency" min="-1000" max="1000" />
+                        <span>transparency</span>
+                    </li>
+                </ul>
+            </aside>
+
+            <!-- <button class="btn btn__toggle-view">view</button> -->
         </div>
     </body>
 </html>

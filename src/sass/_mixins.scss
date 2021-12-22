@@ -1,0 +1,17 @@
+@mixin scroll-bar-style {
+    &::-webkit-scrollbar {
+        width: 0.4rem;
+        height: 0.4rem;
+    }
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+        background: darken($color-primary, 10%);
+
+        border-radius: 20px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+        background: darken($color-primary, 20%);
+    }
+}
