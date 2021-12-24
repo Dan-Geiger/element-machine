@@ -254,7 +254,7 @@ html {
         height: 100%;
 
         display: flex;
-        justify-content: space-between;
+        justify-content: space-evenly;
         overflow-x: scroll;
         gap: 1rem;
 
@@ -268,9 +268,14 @@ html {
 
         display: flex;
         flex-direction: column;
-        overflow-y: auto;
+        overflow-y: scroll;
 
         @include scroll-bar-style;
+
+        & input[type='color'] {
+            flex-shrink: 0;
+            height: 3rem;
+        }
     }
 }
 

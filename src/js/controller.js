@@ -7,25 +7,31 @@ function shapeController() {
     ShapeCL.centerShape();
 }
 // ShapeCL.centerShape();
-//adjasting canvas to window resize
+//adjasting to window resize
 window.addEventListener('resize', () => {
     shapeController();
 });
 
-//clicked mouse position
-canvasEl.addEventListener('click', (e) => {
-    //record points clicked
-    data.setClickPoint(e);
+function init() {
+    ShapeCL.centerShape();
+}
 
-    shapeController();
-});
+init();
+
+//clicked mouse position
+// canvasEl.addEventListener('click', (e) => {
+//     //record points clicked
+//     data.setClickPoint(e);
+
+//     shapeController();
+// });
 
 // //continuous mouse position
-canvasEl.addEventListener('mousemove', (e) => {
-    data.setContinuosPoint(e);
+// canvasEl.addEventListener('mousemove', (e) => {
+//     data.setContinuosPoint(e);
 
-    shapeController();
-});
+//     shapeController();
+// });
 
 // //button listeners
 // select.btnToggleView.addEventListener('click', () => {
@@ -34,8 +40,3 @@ canvasEl.addEventListener('mousemove', (e) => {
 // });
 
 //init fn
-function init() {
-    ShapeCL.centerShape('my name is dan');
-}
-
-// init();

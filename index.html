@@ -53,31 +53,40 @@
             <aside class="style-bar__container">
                 <ul class="style-bar__list">
                     <li class="style-bar__style-item">
-                        <input type="checkbox" name="text center" />
-                        <span>text center</span>
-                        <input type="checkbox" name="uppercase" />
-                        <span>uppercase</span>
+                        <h3>Text</h3>
+                        <span>Text siize</span>
+                        <input class="input" type="number" name="text size" value="32" min="1" />
+                        <span>Text color</span>
+                        <input class="input" type="color" name="background color picker" value="#000000" />
+                        <span>Text center</span>
+                        <input class="input" type="checkbox" name="text center" />
+                        <span>Uppercase</span>
+                        <input class="input" type="checkbox" name="uppercase" />
                     </li>
                     <li class="style-bar__style-item">
-                        <input type="checkbox" name="background color" />
+                        <h3>Background color</h3>
                         <span>background color</span>
-                        <input type="color" name="background color picker" value="#ff0000" />
+                        <input class="input" type="checkbox" name="background color" />
+                        <input class="input" type="color" name="background color picker" value="#ff0000" />
                     </li>
                     <li class="style-bar__style-item">
-                        <input type="checkbox" name="rounded corners" />
+                        <h3>Rounded corners</h3>
                         <span>rounded corners</span>
-                        <input type="number" name="rounded corners value" value="50" />
+                        <input class="input" type="checkbox" name="rounded corners" />
+                        <input class="input" type="number" name="rounded corners value" value="50" />
                     </li>
                     <li class="style-bar__style-item">
-                        <input type="checkbox" name="outline" />
+                        <h3>Outline</h3>
                         <span>outline</span>
-                        <input type="radio" name="outline sides" checked />
+                        <input class="input" type="checkbox" name="outline" />
                         <span>all sides</span>
-                        <input type="radio" name="outline sides" />
+                        <input class="input" type="radio" name="outline sides" checked />
                         <span>every side separately</span>
-                        <input type="number" name="outline value width" value="0.5" id="border-width" />
-                        <label for="border-width">width</label>
-                        <select name="border type select" id="border-type">
+                        <input class="input" type="radio" name="outline sides" />
+                        <span>width</span>
+                        <input class="input" type="number" name="outline value width" value="0.5" id="border-width" />
+                        <span>type</span>
+                        <select class="input" name="border type select" id="border-type">
                             <option value="solid">solid</option>
                             <option value="double">double</option>
                             <option value="dashed">dashed</option>
@@ -89,30 +98,30 @@
                             <option value="none">none</option>
                             <option value="hidden">hidden</option>
                         </select>
-                        <span>type</span>
-                        <input type="color" name="outline color" />
                         <span>color</span>
+                        <input class="input" type="color" name="outline color" />
                     </li>
                     <li class="style-bar__style-item">
-                        <input type="checkbox" name="shadow" />
+                        <h3>Shadow</h3>
                         <span>shadow</span>
-                        <input type="range" name="offset x" min="-10000" max="10000" />
-                        <input type="number" name="offset x" min="-10000" max="10000" />
+                        <input class="input" type="checkbox" name="shadow" />
                         <span>left and right</span>
-                        <input type="range" name="offset y" min="-10000" max="10000" />
-                        <input type="number" name="offset y" min="-10000" max="10000" />
+                        <input class="input" type="range" name="offset x" min="-10000" max="10000" />
+                        <input class="input" type="number" name="offset x" min="-10000" max="10000" />
                         <span>top and bottom</span>
-                        <input type="range" name="blur radius" min="-1000" max="1000" />
-                        <input type="number" name="blur radius" min="-1000" max="1000" />
+                        <input class="input" type="range" name="offset y" min="-10000" max="10000" />
+                        <input class="input" type="number" name="offset y" min="-10000" max="10000" />
                         <span>blur radius</span>
-                        <input type="range" name="spread" min="-1000" max="1000" />
-                        <input type="number" name="spread" min="-1000" max="1000" />
+                        <input class="input" type="range" name="blur radius" min="-1000" max="1000" />
+                        <input class="input" type="number" name="blur radius" min="-1000" max="1000" />
                         <span>spread</span>
-                        <input type="color" name="shadow color" />
+                        <input class="input" type="range" name="spread" min="-1000" max="1000" />
+                        <input class="input" type="number" name="spread" min="-1000" max="1000" />
                         <span>shadow color</span>
-                        <input type="range" name="transparency" min="-1000" max="1000" />
-                        <input type="number" name="transparency" min="-1000" max="1000" />
+                        <input class="input" type="color" name="shadow color" />
                         <span>transparency</span>
+                        <input class="input" type="range" name="transparency" min="-1000" max="1000" />
+                        <input class="input" type="number" name="transparency" min="-1000" max="1000" />
                     </li>
                 </ul>
             </aside>
