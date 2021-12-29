@@ -5,9 +5,12 @@ const inputArr = Array.from(document.querySelectorAll(".input"));
 class ShapeCL {
     #parentElement = document.querySelector(".desk__main");
     #myElement = document.getElementById("my-element");
-    #myElementText = document.getElementById("my-element__text");
+    #inputText = document.getElementById("input-text");
 
+    //self explanatory
     #inputData = {
+        inputText: "My element",
+
         fontSize: 2,
         padding: 2,
         color: "#000",
@@ -41,6 +44,7 @@ class ShapeCL {
         boxShadowAlpha: 0.5,
     };
 
+    //an array of the data properties
     #inputDataPropArr() {
         let propArr = [];
         for (let prop in this.#inputData) {
@@ -49,17 +53,19 @@ class ShapeCL {
         return propArr;
     }
 
+    //element width and height
     getElementDimentions() {
-        //element width and height
         return [this.#myElement.offsetWidth, this.#myElement.offsetHeight];
     }
 
+    //center the element to the canvas
+    // not in use at the moment
     centerShape() {
-        //center the element to the canvas
         this.#myElement.style.marginLeft = this.#parentElement.offsetWidth / 2 + "px";
         this.#myElement.style.marginTop = this.#parentElement.offsetHeight / 2 + "px";
     }
 
+    //adding the input listeners
     addInputListeners() {
         inputArr.forEach((el, i) => {
             if (el.type === "radio" || el.type === "checkbox") {
@@ -76,33 +82,35 @@ class ShapeCL {
                 });
             }
         });
-
-        console.log("Listeners added");
-        // console.log(Object.values(this.#inputData)[0]);
-        // console.log(this.#inputDataPropArr());
-    }
-    test() {
-        // this.#myElement.addEventListener("click", (e) => {
-        //     console.log("bouble", e);
-        // });
-        this.#myElementText.textContent = "WTF";
-        console.log("teste ren");
     }
 
+    #addElementTextListener() {
+        this.#parentElement.lastChild.addEventListener("dblclick", () => {
+            this.#inputText.focus();
+            let val = this.#inputText.value;
+            this.#inputText.value = "";
+            this.#inputText.value = val;
+        });
+    }
+
+    //setting the input values to the data obj
     #setDataProperty(value, index) {
         this.#inputData[this.#inputDataPropArr()[index]] = value;
     }
 
+    //generating new updated markup and inserting to the UI
     updateMyElement() {
         this.#clear();
         this.#parentElement.insertAdjacentHTML("afterbegin", this.#generateElementStyle());
-        this.test();
+        this.#addElementTextListener();
     }
 
+    //clearing "my element"
     #clear() {
         this.#parentElement.innerHTML = "";
     }
 
+    //generating new markup with the updated data obj
     #generateElementStyle() {
         return `
         <style>
@@ -133,16 +141,9 @@ class ShapeCL {
             }
         </style>
         <div class="my-element" id="my-element">
-            <input type="text" class="input-element-text" />
-            <div class="my-element__text">My element</div>
+            <div class="my-element__text">${this.#inputData.inputText}</div>
         </div>`;
     }
 }
 
 export default new ShapeCL();
-
-// (() => {
-//     const select = inputArr.filter((cur) => cur.name == "text size");
-//     console.dir(select.value);
-//     console.log(inputArr);
-// })();
