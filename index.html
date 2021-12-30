@@ -61,23 +61,23 @@
                         <input class="input" type="number" name="padding" value="2" min="0" step=".1" />
                         <span>Text color</span>
                         <input class="input" type="color" name="background color picker" value="#000000" />
-                        <span>Text center</span>
-                        <input class="input" type="checkbox" name="text center" />
-                        <span>Uppercase</span>
-                        <input class="input" type="checkbox" name="uppercase" value="false" />
+                        <!-- <span>Text center</span>
+                        <input class="input" type="checkbox" name="text center" /> -->
+                        <!-- <span>Uppercase</span>
+                        <input class="input" type="checkbox" name="uppercase" value="false" /> -->
                     </li>
                     <li class="style-bar__style-item">
                         <h3>Background color</h3>
                         <span>background color</span>
-                        <input class="input" type="checkbox" name="background color" />
-                        <input class="input" type="color" name="background color picker" value="#ff0000" />
+                        <input class="input" type="checkbox" name="background color" id="back-ground" />
+                        <input class="input back-ground" type="color" name="background color picker" value="#ff0000" />
                     </li>
                     <li class="style-bar__style-item">
                         <h3>Rounded corners</h3>
                         <span>rounded corners</span>
-                        <input class="input" type="checkbox" name="rounded corners" />
+                        <input class="input" type="checkbox" name="rounded corners" id="round-corners" />
                         <input
-                            class="input"
+                            class="input round-corners"
                             type="number"
                             name="rounded corners value"
                             value="0"
@@ -90,18 +90,17 @@
                         <h3>Outline</h3>
 
                         <span>outline</span>
-                        <input class="input" type="checkbox" name="outline" />
+                        <input class="input" type="checkbox" name="outline" id="outline" />
 
-                        <span>all sides</span>
-                        <input class="input" type="radio" name="outline sides" checked />
+                        <span class="outline">all sides</span>
+                        <input class="input outline" type="radio" name="outline sides" checked />
 
-                        <span>every side separately</span>
-                        <input class="input" type="radio" name="outline sides" />
+                        <span class="outline">every side separately</span>
+                        <input class="input outline" type="radio" name="outline sides" />
 
-                        <span>width</span>
+                        <span class="outline">width</span>
                         <input
-                            id="border-width"
-                            class="input"
+                            class="input outline"
                             type="number"
                             name="outline value width"
                             value="0.5"
@@ -109,8 +108,8 @@
                             step=".1"
                         />
 
-                        <span>type</span>
-                        <select class="input" name="border type select" id="border-type">
+                        <span class="outline">type</span>
+                        <select class="input outline" name="border type select">
                             <option value="solid">solid</option>
                             <option value="double">double</option>
                             <option value="dashed">dashed</option>
@@ -123,36 +122,52 @@
                             <option value="hidden">hidden</option>
                         </select>
 
-                        <span>color</span>
-                        <input class="input" type="color" name="outline color" />
+                        <span class="outline">color</span>
+                        <input class="input outline" type="color" name="outline color" />
                     </li>
                     <li class="style-bar__style-item">
                         <h3>Shadow</h3>
                         <span>shadow</span>
-                        <input class="input" type="checkbox" name="shadow" />
+                        <input class="input" type="checkbox" name="shadow" id="shadow" />
 
-                        <span>left and right</span>
-                        <input class="input" type="range" name="offset x" value="0" min="-20" max="20" />
-                        <input class="input" type="number" name="offset x" value="0" min="-20" max="20" />
+                        <span class="shadow">left and right</span>
+                        <input class="input shadow" type="range" name="offset x" value="0" min="-20" max="20" />
+                        <input class="input shadow" type="number" name="offset x" value="0" min="-20" max="20" />
 
-                        <span>top and bottom</span>
-                        <input class="input" type="range" name="offset y" min="-20" max="20" value="0" />
-                        <input class="input" type="number" name="offset y" min="-20" max="20" value="0" />
+                        <span class="shadow">top and bottom</span>
+                        <input class="input shadow" type="range" name="offset y" min="-20" max="20" value="0" />
+                        <input class="input shadow" type="number" name="offset y" min="-20" max="20" value="0" />
 
-                        <span>blur radius</span>
-                        <input class="input" type="range" name="blur radius" min="0" max="20" />
-                        <input class="input" type="number" name="blur radius" min="0" max="20" />
+                        <span class="shadow">blur radius</span>
+                        <input class="input shadow" type="range" name="blur radius" min="0" max="20" />
+                        <input class="input shadow" type="number" name="blur radius" min="0" max="20" />
 
-                        <span>spread</span>
-                        <input class="input" type="range" name="spread" min="0" max="50" value="0" />
-                        <input class="input" type="number" name="spread" min="0" max="50" value="0" />
+                        <span class="shadow">spread</span>
+                        <input class="input shadow" type="range" name="spread" min="0" max="50" value="0" />
+                        <input class="input shadow" type="number" name="spread" min="0" max="50" value="0" />
 
-                        <span>shadow color</span>
-                        <input class="input" type="color" name="shadow color" value="#000000" />
+                        <span class="shadow">shadow color</span>
+                        <input class="input shadow" type="color" name="shadow color" value="#000000" />
 
-                        <span>transparency</span>
-                        <input class="input" type="range" name="transparency" min="0" max="1" value=".5" step=".1" />
-                        <input class="input" type="number" name="transparency" min="0" max="1" value=".5" step=".1" />
+                        <span class="shadow">transparency</span>
+                        <input
+                            class="input shadow"
+                            type="range"
+                            name="transparency"
+                            min="0"
+                            max="1"
+                            value=".5"
+                            step=".1"
+                        />
+                        <input
+                            class="input shadow"
+                            type="number"
+                            name="transparency"
+                            min="0"
+                            max="1"
+                            value=".5"
+                            step=".1"
+                        />
                     </li>
                 </ul>
             </aside>

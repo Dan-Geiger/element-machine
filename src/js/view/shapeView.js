@@ -5,6 +5,7 @@ const inputArr = Array.from(document.querySelectorAll(".input"));
 class ShapeCL {
     #parentElement = document.querySelector(".desk__main");
     #myElement = document.getElementById("my-element");
+    #myElementText = document.querySelector(".my-element__text");
     #inputText = document.getElementById("input-text");
 
     //self explanatory
@@ -14,23 +15,23 @@ class ShapeCL {
         fontSize: 2,
         padding: 2,
         color: "#000",
-        textalign: true,
-        textTransform: false,
+        // textalign: true,
+        // textTransform: false,
 
-        backgroundColorCeck: true,
+        backgroundColorCheck: false,
         backgroundColor: "#fcba03",
 
-        borderRadiusCheck: true,
+        borderRadiusCheck: false,
         borderRadius: 0,
 
-        border: true,
+        borderCheck: false,
         borderAll: true,
         borderSeparate: false,
         borderWidth: 0.5,
         borderType: "solid",
         borderColor: "#000",
 
-        boxShadow: true,
+        boxShadowCheck: false,
         boxShadowOffsetXSlider: 0,
         boxShadowOffsetX: 0,
         boxShadowOffsetYSlider: 0.5,
@@ -73,6 +74,7 @@ class ShapeCL {
                     this.#setDataProperty(el.checked, i);
                     // console.log(el.type, el.checked, i, "checked");
                     this.updateMyElement();
+                    this.#hideElement(el);
                 });
             } else {
                 el.addEventListener("input", (e) => {
@@ -82,15 +84,25 @@ class ShapeCL {
                 });
             }
         });
+
+        this.#inputText.addEventListener("focus", () => {
+            this.updateMyElement();
+            // this.blinkingCursor();
+        });
     }
 
     #addElementTextListener() {
-        this.#parentElement.lastChild.addEventListener("dblclick", () => {
+        this.#parentElement.lastChild.addEventListener("dblclick", (e) => {
             this.#inputText.focus();
+            //puts the cursor at the end of the line
             let val = this.#inputText.value;
             this.#inputText.value = "";
             this.#inputText.value = val;
         });
+    }
+
+    getInputText() {
+        return this.#inputText.value;
     }
 
     //setting the input values to the data obj
@@ -110,6 +122,15 @@ class ShapeCL {
         this.#parentElement.innerHTML = "";
     }
 
+    #hideElement(el) {
+        if (el.id) {
+            const elArr = Array.from(document.querySelectorAll(`.${el.id}`));
+            elArr.forEach((el, i) => {
+                el.classList.toggle("hidden");
+            });
+        }
+    }
+
     //generating new markup with the updated data obj
     #generateElementStyle() {
         return `
@@ -118,8 +139,6 @@ class ShapeCL {
                 font-size: ${this.#inputData.fontSize}rem;
                 padding: ${this.#inputData.padding}rem;
                 color: ${this.#inputData.color};
-                text-align: ${this.#inputData.textalign};
-                text-transform: ${this.#inputData.textTransform == true ? "uppercase" : "lowercase"};
 
                 background-color: ${this.#inputData.backgroundColor};
 

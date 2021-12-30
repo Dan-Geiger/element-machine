@@ -289,12 +289,14 @@ html {
 
 #input-text {
     position: absolute;
-    left: -50rem;
-    top: -50rem;
-    background-color: transparent;
-    outline: none;
-    border: none;
-    color: transparent;
+    // left: -50rem;
+    // top: -50rem;
+    left: 10rem;
+    top: 20rem;
+    // background-color: transparent;
+    // outline: none;
+    // border: none;
+    // color: transparent;
 }
 // .my-element {
 //     display: inline-block;
@@ -316,3 +318,7 @@ html {
 
 //     box-shadow: 0.5rem 0.5rem 1rem rgba($color: #000000, $alpha: 0.5);
 // }
+
+.hidden {
+    visibility: hidden;
+}
