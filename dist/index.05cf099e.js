@@ -653,30 +653,21 @@ class ShapeCL {
         fontSize: 2,
         padding: 2,
         color: "#000",
-        // textalign: true,
-        // textTransform: false,
-        backgroundColorCheck: false,
-        backgroundColor: "#fcba03",
-        borderRadiusCheck: false,
+        backgroundColorCheck: true,
+        backgroundColor: "#c46594",
+        borderRadiusCheck: true,
         borderRadius: 0,
-        borderCheck: false,
-        borderAll: true,
-        borderSeparate: false,
+        borderCheck: true,
         borderWidth: 0.5,
         borderType: "solid",
         borderColor: "#000",
-        boxShadowCheck: false,
-        boxShadowOffsetXSlider: 0,
-        boxShadowOffsetX: 0,
-        boxShadowOffsetYSlider: 0.5,
-        boxShadowOffsetY: 0.5,
-        boxShadowBlurSlider: 1,
-        boxShadowBlur: 1,
-        boxShadowSpreadSlider: 0,
-        boxShadowSpread: 1,
+        boxShadowCheck: true,
         boxShadowColor: "#000",
-        boxShadowAlphaSlider: 0.5,
-        boxShadowAlpha: 0.5
+        boxShadowOffsetXSlider: 0,
+        boxShadowOffsetYSlider: 0.5,
+        boxShadowBlurSlider: 1,
+        boxShadowSpreadSlider: 0,
+        boxShadowAlphaSlider: 1
     };
     //an array of the data properties
      #inputDataPropArr() {
@@ -702,19 +693,16 @@ class ShapeCL {
         inputArr.forEach((el, i)=>{
             if (el.type === "radio" || el.type === "checkbox") el.addEventListener("input", (e)=>{
                 this.#setDataProperty(el.checked, i);
-                // console.log(el.type, el.checked, i, "checked");
                 this.updateMyElement();
                 this.#hideElement(el);
             });
             else el.addEventListener("input", (e)=>{
                 this.#setDataProperty(el.value, i);
-                // console.log(el.type, el.value, i, "value");
                 this.updateMyElement();
             });
         });
         this.#inputText.addEventListener("focus", ()=>{
             this.updateMyElement();
-        // this.blinkingCursor();
         });
     }
      #addElementTextListener() {

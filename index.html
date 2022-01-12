@@ -17,7 +17,7 @@
         <!-- <link rel="stylesheet" href="src/sass/main.scss" /> -->
         <link id="style-sheet" rel="stylesheet" href="src/sass/mainDark.scss" />
         <script type="module" src="src/js/controller.js" defer></script>
-        <title>Element Mchine | by Dan Geiger</title>
+        <title>Element Machine | by Dan Geiger</title>
     </head>
     <body>
         <!-- <div class="testing">
@@ -28,7 +28,7 @@
         <div class="wrapper wrapper__all">
             <div class="top-bar__container">
                 <ul class="top-bar__menu-list">
-                    <select id="menu-shape" class="top-bar__menu-item top-bar__menu-item--1">
+                    <!-- <select id="menu-shape" class="top-bar__menu-item top-bar__menu-item--1">
                         <option value="Shapes">Shapes</option>
                         <option value="Squere">Square</option>
                         <option value="Circle">Circle</option>
@@ -36,9 +36,9 @@
                         <option value="Pentagon">Pentagon</option>
                         <option value="Star">Star</option>
                         <option value="Draw shape">Draw shape</option>
-                    </select>
-                    <li class="top-bar__menu-item top-bar__menu-item--2">this</li>
-                    <li class="top-bar__menu-item top-bar__menu-item--3">that</li>
+                    </select> -->
+                    <!-- <li class="top-bar__menu-item top-bar__menu-item--2">this</li>
+                    <li class="top-bar__menu-item top-bar__menu-item--3">that</li> -->
                     <button id="dark-theme">Dark theme</button>
                 </ul>
             </div>
@@ -71,13 +71,13 @@
                     <li class="style-bar__style-item">
                         <h3>Background color</h3>
                         <span>background color</span>
-                        <input class="input" type="checkbox" name="background color" id="back-ground" />
+                        <input class="input" type="checkbox" name="background color" id="back-ground" checked />
                         <input class="input back-ground" type="color" name="background color picker" value="#ff0000" />
                     </li>
                     <li class="style-bar__style-item">
                         <h3>Rounded corners</h3>
                         <span>rounded corners</span>
-                        <input class="input" type="checkbox" name="rounded corners" id="round-corners" />
+                        <input class="input" type="checkbox" name="rounded corners" id="round-corners" checked />
                         <input
                             class="input round-corners"
                             type="number"
@@ -92,21 +92,22 @@
                         <h3>Outline</h3>
 
                         <span>outline</span>
-                        <input class="input" type="checkbox" name="outline" id="outline" />
+                        <input class="input" type="checkbox" name="outline" id="outline" checked />
 
-                        <span class="outline">all sides</span>
+                        <!-- <span class="outline">all sides</span>
                         <input class="input outline" type="radio" name="outline sides" checked />
 
                         <span class="outline">every side separately</span>
-                        <input class="input outline" type="radio" name="outline sides" />
+                        <input class="input outline" type="radio" name="outline sides" /> -->
 
                         <span class="outline">width</span>
                         <input
                             class="input outline"
-                            type="number"
+                            type="range"
                             name="outline value width"
                             value="0.5"
                             min="0"
+                            max="5"
                             step=".1"
                         />
 
@@ -130,26 +131,22 @@
                     <li class="style-bar__style-item">
                         <h3>Shadow</h3>
                         <span>shadow</span>
-                        <input class="input" type="checkbox" name="shadow" id="shadow" />
-
-                        <span class="shadow">left and right</span>
-                        <input class="input shadow" type="range" name="offset x" value="0" min="-20" max="20" />
-                        <input class="input shadow" type="number" name="offset x" value="0" min="-20" max="20" />
-
-                        <span class="shadow">top and bottom</span>
-                        <input class="input shadow" type="range" name="offset y" min="-20" max="20" value="0" />
-                        <input class="input shadow" type="number" name="offset y" min="-20" max="20" value="0" />
-
-                        <span class="shadow">blur radius</span>
-                        <input class="input shadow" type="range" name="blur radius" min="0" max="20" />
-                        <input class="input shadow" type="number" name="blur radius" min="0" max="20" />
-
-                        <span class="shadow">spread</span>
-                        <input class="input shadow" type="range" name="spread" min="0" max="50" value="0" />
-                        <input class="input shadow" type="number" name="spread" min="0" max="50" value="0" />
+                        <input class="input" type="checkbox" name="shadow" id="shadow" checked />
 
                         <span class="shadow">shadow color</span>
                         <input class="input shadow" type="color" name="shadow color" value="#000000" />
+
+                        <span class="shadow">left and right</span>
+                        <input class="input shadow" type="range" name="offset x" value="0" min="-20" max="20" />
+
+                        <span class="shadow">top and bottom</span>
+                        <input class="input shadow" type="range" name="offset y" min="-20" max="20" value="0" />
+
+                        <span class="shadow">blur radius</span>
+                        <input class="input shadow" type="range" name="blur radius" min="0" max="20" />
+
+                        <span class="shadow">spread</span>
+                        <input class="input shadow" type="range" name="spread" min="0" max="20" value="0" />
 
                         <span class="shadow">transparency</span>
                         <input
@@ -158,18 +155,18 @@
                             name="transparency"
                             min="0"
                             max="1"
-                            value=".5"
+                            value="1"
                             step=".1"
                         />
-                        <input
+                        <!-- <input
                             class="input shadow"
                             type="number"
                             name="transparency"
                             min="0"
                             max="1"
                             value=".5"
-                            step=".1"
-                        />
+                            step="1"
+                        /> -->
                     </li>
                 </ul>
             </aside>

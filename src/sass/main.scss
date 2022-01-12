@@ -2,10 +2,13 @@
 @import "mixins.scss";
 
 //variables
+$font-color-primary: #000;
+$font-color-neon: #ade4ff;
 $font-size-primary: 2rem;
+$font-shadow: 0 0 0.5rem #ade4ff;
 
 $color-primary: #ecf0f3;
-$color-neon: #ade4ff;
+$color-neon: #c46594;
 
 $bump-inner-low: inset 1.5rem 1.5rem 2rem darken($color-primary, 10%),
     inset -1.5rem -1.5rem 2rem lighten($color-primary, 10%);
@@ -30,6 +33,8 @@ body {
     box-sizing: border-box;
     font-family: "Lato", sans-serif;
     font-size: $font-size-primary;
+    font-weight: 300;
+    color: $font-color-primary;
 }
 
 html {
@@ -81,6 +86,7 @@ html {
 
     &__menu-item {
         background-color: $color-primary;
+        color: in;
         padding: 1rem;
         margin-left: 2rem;
         border-radius: 1rem;
@@ -179,6 +185,7 @@ html {
         background-color: $color-primary;
         // background-color:orangered;//for tests
         border-radius: 3rem;
+        border: none;
         box-shadow: $bump-inner-low;
 
         width: 100%;
@@ -250,6 +257,7 @@ html {
         height: 25%;
 
         border-radius: 3rem;
+        border: none;
         box-shadow: $bump-inner-low;
     }
     &__list {
@@ -265,25 +273,77 @@ html {
         @include scroll-bar-style;
     }
     &__style-item {
-        // background-color: #0000ff;
-        font-size: 1.5rem;
+        font-size: 1.8rem;
         padding: 1rem;
         flex-shrink: 0;
 
         display: flex;
         flex-direction: column;
         overflow-y: scroll;
+        justify-content: start;
+        align-items: center;
+        gap: 1.5rem;
 
         @include scroll-bar-style;
 
         & input[type="color"] {
             flex-shrink: 0;
             height: 3rem;
+            width: 3rem;
+            border: 1px solid #000;
+            border-radius: 50%;
+            -webkit-appearance: none;
+        }
+        & input[type="color"]::-webkit-color-swatch-wrapper {
+            padding: 0;
+        }
+        & input[type="color"]::-webkit-color-swatch {
+            border: none;
+            border-radius: 50%;
         }
 
-        & span {
-            margin-top: 1rem;
+        & input[type="number"] {
+            background-color: lighten($color-primary, 20%);
+            border: 1px solid #000;
+            border-radius: 50rem;
+            width: 5rem;
+            // color: #fff;
+            text-align: center;
+            outline: none;
         }
+
+        & input[type="range"] {
+            height: 0rem;
+            -webkit-appearance: none;
+            width: 100%;
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+        }
+        & input[type="range"]::-webkit-slider-thumb {
+            // prettier-ignore
+            border: 2px solid #000;
+            height: 1.5rem;
+            width: 1.5rem;
+            background: #000;
+            border-radius: 50%;
+            -webkit-appearance: none;
+        }
+        & input[type="range"]::-webkit-slider-runnable-track {
+            cursor: pointer;
+            // prettier-ignore
+            box-shadow: 
+            inset .2rem .2rem .5rem darken($color-primary, 5%),
+            inset -.2rem -.2rem .5rem lighten($color-primary, 20%);
+            background: $color-primary;
+            border-radius: 50px;
+            border: 1px solid #000;
+        }
+
+        // & span,
+        // h3 {
+        //     // margin-top: 1rem;
+        //     // margin: 1rem;
+        // }
     }
 }
 
@@ -298,26 +358,27 @@ html {
     // border: none;
     // color: transparent;
 }
-// .my-element {
-//     display: inline-block;
-//     transform: translate(-50%, -50%);
-//     margin-left: 10rem;
+.my-element {
+    text-shadow: none;
+    // display: inline-block;
+    // transform: translate(-50%, -50%);
+    // margin-left: 10rem;
 
-//     padding: 2rem;
+    // padding: 2rem;
 
-//     font-size: 2rem;
-//     color: #000000;
-//     text-align: center;
-//     text-transform: uppercase;
+    // font-size: 2rem;
+    // color: #000000;
+    // text-align: center;
+    // text-transform: uppercase;
 
-//     background-color: orangered;
+    // background-color: orangered;
 
-//     border-radius: 1rem;
+    // border-radius: 1rem;
 
-//     border: 0.5rem dashed black;
+    // border: 0.5rem dashed black;
 
-//     box-shadow: 0.5rem 0.5rem 1rem rgba($color: #000000, $alpha: 0.5);
-// }
+    // box-shadow: 0.5rem 0.5rem 1rem rgba($color: #000000, $alpha: 0.5);
+}
 
 .hidden {
     visibility: hidden;
